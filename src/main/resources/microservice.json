@@ -6,7 +6,7 @@
         "path": "com/ofg/some-other-service"
       },
       "fraud-detection-service": {
-        "path": "com/ofg/fraud-detection-service"
+        "path": "com/ofg/fraud-detection-service-lodz"
       }
     }
   }
