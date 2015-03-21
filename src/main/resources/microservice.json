@@ -9,7 +9,7 @@
         "path": "com/ofg/fraud-detection-service-lodz"
       },
       "reporting-service": {
-        "path": "com/micro/reporting-service-lodz"
+        "path": "com/ofg/reporting-service-lodz"
       }
     }
   }
