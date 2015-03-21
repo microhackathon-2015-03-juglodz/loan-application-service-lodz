@@ -13,10 +13,10 @@ class ReportingClient {
         this.serviceRestClient = serviceRestClient
     }
 
-    void newClient(long pairId, String loanApplication) {
+    void newClient(String loanApplication) {
         serviceRestClient.forService(Collaborators.REPORTING_DEPENDENCY_NAME)
                 .post()
-                .onUrlFromTemplate("/{pairId}").withVariables(pairId)
+                .onUrlFromTemplate("/").withVariables()
                 .body(loanApplication)
                 .anObject()
                 .ofType(String)

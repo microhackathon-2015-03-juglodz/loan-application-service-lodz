@@ -9,16 +9,15 @@ import groovy.transform.TypeChecked
 @PackageScope
 class LoanJsonBuilder {
 
-    String buildLoanJson(long pairId, LoanApplication loanApplication) {
+    String buildLoanJson(LoanApplication loanApplication) {
         return new SimpleTemplateEngine()
                 .createTemplate(JSON_RESPONSE_TEMPLATE)
-                .make([pairId: pairId, loan: loanApplication])
+                .make([loan: loanApplication])
                 .toString()
     }
 
     private static final String JSON_RESPONSE_TEMPLATE = '''
                 {
-                    "pair_id" : $pairId
                     "firstName" : ${loan.firsName},
                     "lastName" : ${loan.lastName},
                     "job" : ${loan.job},
