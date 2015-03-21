@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 @TypeChecked
 @Slf4j
 public class ReportingService implements Consumer {
-    final static Logger log = LoggerFactory.getLogger(ReportingService.class);
 
     @Override
     public void consume(LoanApplication loanApplication) {

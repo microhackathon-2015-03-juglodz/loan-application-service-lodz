@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class FraudService implements Consumer {
 
-    final static Logger log = LoggerFactory.getLogger(FraudService.class);
-
     @Override
     public void consume(LoanApplication loanApplication) {
         log.debug("Sending LoaanApplication to FraudService: " + loanApplication);

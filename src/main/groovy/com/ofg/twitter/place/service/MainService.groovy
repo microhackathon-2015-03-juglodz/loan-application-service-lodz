@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MainService implements Consumer {
 
-    final static Logger log = LoggerFactory.getLogger(MainService.class);
-
     @Autowired
     private DbService dbService;
     @Autowired
@@ -25,7 +23,6 @@ public class MainService implements Consumer {
     @Override
     public void consume(LoanApplication loanApplication) {
         log.debug("Consuming LoanApplication:: " + loanApplication);
-        System.out.println("Consuming LoanApplication:: " + loanApplication);
         dbService.consume(loanApplication);
         fraudService.consume(loanApplication);
         reportingService.consume(loanApplication);
