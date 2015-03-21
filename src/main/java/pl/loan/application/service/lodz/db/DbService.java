@@ -16,5 +16,7 @@ public class DbService implements Consumer {
     @Override
     public void consume(LoanApplication loanApplication) {
         log.debug("Saving LoaanApplication to db: " + loanApplication);
+
+        System.out.println("Saving LoanApplication to db:: " + loanApplication);
     }
 }

@@ -33,9 +33,8 @@ class LoanApplicationServiceController {
     
     @RequestMapping(
             value = '{pairId}',
-            method = POST,
-            consumes = TWITTER_PLACES_ANALYZER_JSON_VERSION_1,
-            produces = TWITTER_PLACES_ANALYZER_JSON_VERSION_1)
+            method = POST
+    )
     @ApiOperation(value = "Stores loan application, notifies reportingService and FraudDetectionService",
             notes = "Stores loan applications details received from the UI. Notifies ReportingService about new loan applications. Updates FraudDetectionService")
     Callable<Void> getPlacesFromTweets(@RequestBody @NotNull LoanApplication loanApplication) {

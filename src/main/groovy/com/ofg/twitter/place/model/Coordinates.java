@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Coordinates {
-    private List<Double> coordinates = new ArrayList<>();
+    private List<Double> coordinates = new ArrayList<Double>();
 
     public List<Double> getCoordinates() {
         return coordinates;

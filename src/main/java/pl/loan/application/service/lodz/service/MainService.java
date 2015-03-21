@@ -16,7 +16,7 @@ public class MainService implements Consumer{
     private Consumer fraudService;
     private Consumer reportingService;
 
-    @Autowired public MainService(Consumer dbService, Consumer fraudService, Consumer reportingService) {
+    public MainService(Consumer dbService, Consumer fraudService, Consumer reportingService) {
         this.dbService = dbService;
         this.fraudService= fraudService;
         this.reportingService = reportingService;
@@ -26,7 +26,7 @@ public class MainService implements Consumer{
     @Override
     public void consume(LoanApplication loanApplication) {
         log.debug("Consuming LoanApplication:: " + loanApplication);
-
+        System.out.println("Consuming LoanApplication:: " + loanApplication);
         dbService.consume(loanApplication);
         fraudService.consume(loanApplication);
         reportingService.consume(loanApplication);
