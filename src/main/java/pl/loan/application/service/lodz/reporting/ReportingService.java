@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class ReportingService implements Consumer {
 
     @Override
-    public void consume(BigDecimal amount, String msg) {
+    public void consume(BigDecimal amount, String loanId) {
 
     }
 }

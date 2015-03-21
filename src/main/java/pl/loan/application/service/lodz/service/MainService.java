@@ -17,9 +17,9 @@ public class MainService implements Consumer{
     private Consumer reportingService;
 
     @Override
-    public void consume(BigDecimal amount, String msg) {
-        dbService.consume(amount, msg);
-        fraudService.consume(amount, msg);
-        reportingService.consume(amount, msg);
+    public void consume(BigDecimal amount, String loanId) {
+        dbService.consume(amount, loanId);
+        fraudService.consume(amount, loanId);
+        reportingService.consume(amount, loanId);
     }
 }
