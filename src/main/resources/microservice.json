@@ -1,10 +1,13 @@
 {
-    "lodz": {
-        "this": "com/ofg/loan-application-service-lodz",
-        "dependencies": {
-            "collerator": {
-                "path": "com/ofg/some-other-service"
-            }
-        }
+  "lodz": {
+    "this": "com/ofg/loan-application-service-lodz",
+    "dependencies": {
+      "collerator": {
+        "path": "com/ofg/some-other-service"
+      },
+      "fraud-detection-service": {
+        "path": "com/ofg/fraud-detection-service"
+      }
     }
+  }
 }
