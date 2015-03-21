@@ -1,7 +1,7 @@
 package pl.loan.application.service.lodz;
 
-import java.math.BigDecimal;
+import pl.loan.application.service.lodz.model.LoanApplication;
 
 public interface Consumer {
-    void consume(BigDecimal amount, String msg);
+    void consume(LoanApplication loanApplication);
 }

@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
+import pl.loan.application.service.lodz.db.DbService
+import pl.loan.application.service.lodz.fraud.FraudService
+import pl.loan.application.service.lodz.reporting.ReportingService
+import pl.loan.application.service.lodz.service.MainService
 
 @Configuration
 @Import(ExtractorMetricsConfiguration)
@@ -40,9 +44,25 @@ class PlaceExtractorConfiguration {
     }
     
     @Bean
-    ApplicationLoanWorker applicationLoanWorker() {
-        return new ApplicationLoanPropagationWorker();
+    DbService dbService() {
+        return new DbService();
     }
+
+    @Bean
+    FraudService fraudService() {
+        return new FraudService();
+    }
+
+    @Bean
+    ReportingService reportingService() {
+        return new ReportingService();
+    }
+
+    @Bean
+    MainService mainService(DbService dbService, FraudService fraudService, ReportingService reportingService) {
+        return new MainService(dbService, fraudService, reportingService);
+    }
+
 
     @Bean
     ColleratorClient colleratorClient(ServiceRestClient serviceRestClient) {

@@ -1,10 +1,8 @@
 package com.ofg.twitter.place.extractor
 
-import com.ofg.twitter.place.model.LoanApplication
-import com.ofg.twitter.place.model.Tweet
+import pl.loan.application.service.lodz.model.LoanApplication
 import groovy.transform.TypeChecked
 import groovy.util.logging.Slf4j
-import org.springframework.beans.factory.annotation.Autowired
 
 @TypeChecked
 @Slf4j

@@ -1,25 +1,34 @@
 package pl.loan.application.service.lodz.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import pl.loan.application.service.lodz.model.LoanApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.loan.application.service.lodz.Consumer;
 
-import java.math.BigDecimal;
-
 @Service
 public class MainService implements Consumer{
 
-    @Autowired
+    final static Logger log = LoggerFactory.getLogger(MainService.class);
+    
     private Consumer dbService;
-    @Autowired
     private Consumer fraudService;
-    @Autowired
     private Consumer reportingService;
 
+    @Autowired public MainService(Consumer dbService, Consumer fraudService, Consumer reportingService) {
+        this.dbService = dbService;
+        this.fraudService= fraudService;
+        this.reportingService = reportingService;
+    }
+
+
     @Override
-    public void consume(BigDecimal amount, String msg) {
-        dbService.consume(amount, msg);
-        fraudService.consume(amount, msg);
-        reportingService.consume(amount, msg);
+    public void consume(LoanApplication loanApplication) {
+        log.debug("Consuming LoanApplication:: " + loanApplication);
+
+        dbService.consume(loanApplication);
+        fraudService.consume(loanApplication);
+        reportingService.consume(loanApplication);
     }
 }
