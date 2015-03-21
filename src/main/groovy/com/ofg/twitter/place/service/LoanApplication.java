@@ -1,4 +1,4 @@
-package pl.loan.application.service.lodz.model;
+package com.ofg.twitter.place.service;
 
 import java.math.BigDecimal;
 

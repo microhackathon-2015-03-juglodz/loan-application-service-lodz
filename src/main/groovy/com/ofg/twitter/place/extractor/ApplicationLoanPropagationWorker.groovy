@@ -1,6 +1,6 @@
 package com.ofg.twitter.place.extractor
 
-import pl.loan.application.service.lodz.model.LoanApplication
+import com.ofg.twitter.place.service.LoanApplication
 import groovy.transform.TypeChecked
 import groovy.util.logging.Slf4j
 

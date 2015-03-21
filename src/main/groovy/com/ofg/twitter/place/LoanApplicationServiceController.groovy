@@ -1,6 +1,6 @@
 package com.ofg.twitter.place
 
-import pl.loan.application.service.lodz.model.LoanApplication
+import com.ofg.twitter.place.service.LoanApplication
 import com.wordnik.swagger.annotations.Api
 import com.wordnik.swagger.annotations.ApiOperation
 import groovy.transform.TypeChecked
@@ -9,12 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import pl.loan.application.service.lodz.service.MainService
+import com.ofg.twitter.place.service.MainService
 
 import javax.validation.constraints.NotNull
 import java.util.concurrent.Callable
 
-import static com.ofg.twitter.config.Versions.TWITTER_PLACES_ANALYZER_JSON_VERSION_1
 import static org.springframework.web.bind.annotation.RequestMethod.POST
 
 @Slf4j

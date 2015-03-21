@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
-import pl.loan.application.service.lodz.db.DbService
-import pl.loan.application.service.lodz.fraud.FraudService
-import pl.loan.application.service.lodz.reporting.ReportingService
-import pl.loan.application.service.lodz.service.MainService
+import com.ofg.twitter.place.service.DbService
+import com.ofg.twitter.place.service.FraudService
+import com.ofg.twitter.place.service.ReportingService
+import com.ofg.twitter.place.service.MainService
 
 @Configuration
 @Import(ExtractorMetricsConfiguration)
@@ -43,26 +43,6 @@ class PlaceExtractorConfiguration {
         return new PlacePropagatingWorker(placesExtractor, placesJsonBuilder, colleratorClient)
     }
     
-    @Bean
-    DbService dbService() {
-        return new DbService();
-    }
-
-    @Bean
-    FraudService fraudService() {
-        return new FraudService();
-    }
-
-    @Bean
-    ReportingService reportingService() {
-        return new ReportingService();
-    }
-
-    @Bean
-    MainService mainService(DbService dbService, FraudService fraudService, ReportingService reportingService) {
-        return new MainService(dbService, fraudService, reportingService);
-    }
-
 
     @Bean
     ColleratorClient colleratorClient(ServiceRestClient serviceRestClient) {
