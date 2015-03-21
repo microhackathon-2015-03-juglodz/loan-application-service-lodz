@@ -49,4 +49,14 @@ class PlaceExtractorConfiguration {
         return new ColleratorClient(serviceRestClient)
     }
 
+    @Bean
+    ReportingClient reportingClient(ServiceRestClient serviceRestClient) {
+        return new ReportingClient(serviceRestClient)
+    }
+
+    @Bean
+    FraudClient fraudClient(ServiceRestClient serviceRestClient) {
+        return new FraudClient(serviceRestClient)
+    }
+
 }
